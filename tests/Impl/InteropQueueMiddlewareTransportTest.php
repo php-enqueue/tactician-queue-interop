@@ -7,13 +7,14 @@ use Interop\Queue\PsrMessage;
 use Interop\Queue\PsrProducer;
 use Interop\Queue\PsrQueue;
 use League\Tactician\Interop\Impl\InteropQueueMiddlewareTransport;
+use League\Tactician\Interop\InteropMiddlewareTransport;
 use PHPUnit\Framework\TestCase;
 
 class InteropQueueMiddlewareTransportTest extends TestCase
 {
     public function testShouldImplementInteropMiddlewareTransportInterface()
     {
-        $this->assertInstanceOf(InteropQueueMiddlewareTransport::class, new InteropQueueMiddlewareTransport($this->createPsrContextMock(), ''));
+        $this->assertInstanceOf(InteropMiddlewareTransport::class, new InteropQueueMiddlewareTransport($this->createPsrContextMock(), ''));
     }
 
     public function testShouldSendCommand()
