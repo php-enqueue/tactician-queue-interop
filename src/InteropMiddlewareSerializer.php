@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Tactician\Interop;
+namespace Enqueue\Tactician\Interop;
 
 
 interface InteropMiddlewareSerializer

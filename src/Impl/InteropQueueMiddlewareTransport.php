@@ -1,10 +1,10 @@
 <?php
 
-namespace League\Tactician\Interop\Impl;
+namespace Enqueue\Tactician\Interop\Impl;
 
 use Interop\Queue\PsrContext;
 use Interop\Queue\PsrProducer;
-use League\Tactician\Interop\InteropMiddlewareTransport;
+use Enqueue\Tactician\Interop\InteropMiddlewareTransport;
 
 class InteropQueueMiddlewareTransport implements InteropMiddlewareTransport
 {

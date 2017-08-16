@@ -1,5 +1,5 @@
 {
-  "name": "league/tactician-queue-interop",
+  "name": "enqueue/tactician-queue-interop",
   "description": "Queueing command bus plugin for Tactician based on Queue Interop",
   "license": "MIT",
   "keywords": ["queue-interop", "enqueue", "tactician", "command-bus", "message queue"],

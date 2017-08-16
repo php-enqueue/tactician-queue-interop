@@ -1,11 +1,11 @@
 <?php
 
-namespace League\Tactician\Interop\Tests;
+namespace Enqueue\Tactician\Interop\Tests;
 
 use Interop\Queue\PsrMessage;
-use League\Tactician\Interop\InteropMiddleware;
-use League\Tactician\Interop\InteropMiddlewareSerializer;
-use League\Tactician\Interop\InteropMiddlewareTransport;
+use Enqueue\Tactician\Interop\InteropMiddleware;
+use Enqueue\Tactician\Interop\InteropMiddlewareSerializer;
+use Enqueue\Tactician\Interop\InteropMiddlewareTransport;
 use League\Tactician\Middleware;
 use PHPUnit\Framework\TestCase;
 

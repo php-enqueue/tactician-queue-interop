@@ -1,11 +1,11 @@
 <?php
 
-namespace League\Tactician\Interop\Tests\Impl;
+namespace Enqueue\Tactician\Interop\Tests\Impl;
 
 use Interop\Amqp\AmqpContext;
 use Interop\Amqp\Impl\AmqpQueue;
-use League\Tactician\Interop\Impl\AmqpInteropMiddlewareTransport;
-use League\Tactician\Interop\InteropMiddlewareTransport;
+use Enqueue\Tactician\Interop\Impl\AmqpInteropMiddlewareTransport;
+use Enqueue\Tactician\Interop\InteropMiddlewareTransport;
 use PHPUnit\Framework\TestCase;
 
 class AmqpInteropMiddlewareTransportTest extends TestCase

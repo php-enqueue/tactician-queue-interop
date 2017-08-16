@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Tactician\Interop\Impl;
+namespace Enqueue\Tactician\Interop\Impl;
 
 use Interop\Amqp\AmqpContext;
 use Interop\Amqp\AmqpQueue;

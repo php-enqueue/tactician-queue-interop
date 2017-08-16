@@ -1,13 +1,13 @@
 <?php
 
-namespace League\Tactician\Interop\Tests\Impl;
+namespace Enqueue\Tactician\Interop\Tests\Impl;
 
 use Interop\Queue\PsrContext;
 use Interop\Queue\PsrMessage;
 use Interop\Queue\PsrProducer;
 use Interop\Queue\PsrQueue;
-use League\Tactician\Interop\Impl\InteropQueueMiddlewareTransport;
-use League\Tactician\Interop\InteropMiddlewareTransport;
+use Enqueue\Tactician\Interop\Impl\InteropQueueMiddlewareTransport;
+use Enqueue\Tactician\Interop\InteropMiddlewareTransport;
 use PHPUnit\Framework\TestCase;
 
 class InteropQueueMiddlewareTransportTest extends TestCase

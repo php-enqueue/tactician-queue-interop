@@ -1,9 +1,9 @@
 <?php
 
-namespace League\Tactician\Interop\Tests\Impl;
+namespace Enqueue\Tactician\Interop\Tests\Impl;
 
-use League\Tactician\Interop\Impl\NativePhpSerializer;
-use League\Tactician\Interop\InteropMiddlewareSerializer;
+use Enqueue\Tactician\Interop\Impl\NativePhpSerializer;
+use Enqueue\Tactician\Interop\InteropMiddlewareSerializer;
 use PHPUnit\Framework\TestCase;
 
 class NativePhpSerializerTest extends TestCase

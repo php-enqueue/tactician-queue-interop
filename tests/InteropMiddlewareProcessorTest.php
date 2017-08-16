@@ -1,12 +1,12 @@
 <?php
 
-namespace League\Tactician\Interop\Tests;
+namespace Enqueue\Tactician\Interop\Tests;
 
 use Interop\Queue\PsrContext;
 use Interop\Queue\PsrMessage;
 use Interop\Queue\PsrProcessor;
 use League\Tactician\CommandBus;
-use League\Tactician\Interop\InteropMiddlewareProcessor;
+use Enqueue\Tactician\Interop\InteropMiddlewareProcessor;
 use PHPUnit\Framework\TestCase;
 
 class InteropMiddlewareProcessorTest extends TestCase

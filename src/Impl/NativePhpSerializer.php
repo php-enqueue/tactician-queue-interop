@@ -1,8 +1,8 @@
 <?php
 
-namespace League\Tactician\Interop\Impl;
+namespace Enqueue\Tactician\Interop\Impl;
 
-use League\Tactician\Interop\InteropMiddlewareSerializer;
+use Enqueue\Tactician\Interop\InteropMiddlewareSerializer;
 
 class NativePhpSerializer implements InteropMiddlewareSerializer
 {
