@@ -7,7 +7,8 @@ The example demonstrate how to queue a command to a MQ and process later in a di
 Here's how to get started with it:
  
 ```bash
-$ git clone git@github.com:php-enqueue/tactician-queue-interop.git && cd tactician-queue-interop
+$ git clone git@github.com:php-enqueue/tactician-queue-interop.git;
+$ cd tactician-queue-interop
 $ composer install 
 $ php example/queue_command_example.php 
 ```
