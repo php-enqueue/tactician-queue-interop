@@ -1,13 +1,13 @@
 <?php
 
-namespace Enqueue\Tactician\Interop;
+namespace Enqueue\Tactician;
 
 use Interop\Queue\PsrContext;
 use Interop\Queue\PsrMessage;
 use Interop\Queue\PsrProcessor;
 use League\Tactician\CommandBus;
 
-class InteropMiddlewareProcessor implements PsrProcessor
+class TacticianProcessor implements PsrProcessor
 {
     /**
      * @var CommandBus
@@ -27,7 +27,7 @@ class InteropMiddlewareProcessor implements PsrProcessor
      */
     public function process(PsrMessage $message, PsrContext $context)
     {
-        $this->commandBus->handle($message);
+        $this->commandBus->handle(new ReceivedMessage($message));
 
         return self::ACK;
     }

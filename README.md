@@ -1,59 +1,24 @@
 # Queue interop transport for Tactician  
 
-## Useage
+## Usage:
 
-```php
-<?php
-use Enqueue\AmqpLib\AmqpConnectionFactory;
-use League\Tactician\CommandBus;
-use League\Tactician\Handler\CommandHandlerMiddleware;
-use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
-use League\Tactician\Handler\Locator\InMemoryLocator;
-use League\Tactician\Handler\MethodNameInflector\HandleInflector;
-use Enqueue\Tactician\Interop\Impl\AmqpInteropMiddlewareTransport;
-use Enqueue\Tactician\Interop\Impl\InteropQueueMiddlewareTransport;
-use Enqueue\Tactician\Interop\Impl\NativePhpSerializer;
-use Enqueue\Tactician\Interop\InteropMiddleware;
-use League\Tactician\Plugins\LockingMiddleware;
-require_once 'vendor/autoload.php';
-class TaskCommand
-{
-    public $message = 'Hello World!!!';
-}
-class TaskHandler
-{
-    public function handle(TaskCommand $command) {
-        echo $command->message, PHP_EOL;
-    }
-}
-$handlerMiddleware = new CommandHandlerMiddleware(
-    new ClassNameExtractor(),
-    new InMemoryLocator([
-        TaskCommand::class => new TaskHandler(),
-    ]),
-    new HandleInflector()
-);
-$lockingMiddleware = new LockingMiddleware();
-//
-$context = (new AmqpConnectionFactory('amqp://'))->createContext();
-$trans = new AmqpInteropMiddlewareTransport($context, 'queue');
-$intMiddle = new InteropMiddleware($trans, new NativePhpSerializer());
-//
-$bus = new CommandBus([
-    $lockingMiddleware,
-    $intMiddle,
-    $handlerMiddleware,
-]);
-//$bus->handle(new TaskCommand());
-$consumer = $context->createConsumer($context->createQueue('queue'));
-$processor = new \Enqueue\Tactician\Interop\InteropMiddlewareProcessor($bus);
-while (true) {
-    if ($message = $consumer->receive()) {
-        $processor->process($message, $context);
-        $consumer->acknowledge($message);
-        sleep(1);
-    }
-}
+Take a look at [example/queue_command_example.php](example/queue_command_example.php). 
+The example demonstrate how to queue a command to a MQ and process later in a different process.
+Here's how to get started with it:
+ 
+```bash
+$ git clone git@github.com:php-enqueue/tactician-queue-interop.git && cd tactician-queue-interop
+$ composer install 
+$ php example/queue_command_example.php 
+```
+
+The expected output is:
+
+``` 
+Command has been queued
+Got message from MQ
+Hello World!!!
+
 ```
 
 ## Developed by Forma-Pro
